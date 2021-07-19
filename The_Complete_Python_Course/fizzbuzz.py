@@ -11,7 +11,9 @@ numbers = range(1,101)
 
 for number in numbers: 
     if number % 3 == 0 or number % 5  == 0:
-        pass
+        print(number)
+    if number % 15 == 0: 
+        print()
     
 
         

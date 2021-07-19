@@ -19,14 +19,14 @@ matched_players = players[0]
 # print(matched_players)
 
 for player in players: 
-    print(player)
+    # print(player)
     players_matched_numbers = (len(player["numbers"].intersection(lottery_numbers))) #trying to get length of the players numbers that match the lotter numbers 
     # print(players_matched_numbers)
     if players_matched_numbers > len(matched_players["numbers"].intersection(lottery_numbers)):
         # print(players_matched_numbers)
-        matched_players = player # players who match the player that has most numbers
+        matched_players = player[0] # players who match the player that has most numbers
         winning = 100 ** len(matched_players["numbers"].intersection(lottery_numbers))
        
-        print(f"{matched_players['name']} matched {players_matched_numbers}")
+        # print(f"{matched_players['name']} matched {players_matched_numbers}")
         print(f"{matched_players['name']} won {winning}.")
         

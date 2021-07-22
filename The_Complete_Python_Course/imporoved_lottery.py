@@ -3,7 +3,7 @@ import random
 # This line creates a set with 6 random numbers
 lottery_numbers = set(random.sample(range(22), 6))
 
-winner_found = False
+# winner_found = False
 # Here are your players; find out who has the most numbers matching lottery_numbers!
 
 players = [
@@ -33,5 +33,5 @@ for player in players:
         # print(f"{matched_players['name']} won {winning}.")
         print("{} won {}".format(player.get('name'), winning))
     
-    if not winner_found:
-        print("NO WINNER, EVERYONE IS SAD")
+    # if not winner_found:
+    #     print("NO WINNER, EVERYONE IS SAD")

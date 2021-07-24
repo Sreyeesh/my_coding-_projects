@@ -27,15 +27,6 @@ now = datetime.now()
 the_time = now.strftime("%H:%M %p")
 print("Current Time = ",the_time)
 
-<<<<<<< HEAD
-for t in the_time:
-    if t in the_time == "12:00 PM":
-    #    print(now)
-       playsound('/mnt/c/Users/sgari/Documents/my_coding_projects/The_Complete_Python_Course/high_noon.mp3') 
-      
-
-=======
->>>>>>> 1ac14d54db0d890361c2684a54e01bf4a0913755
 # print(len(world_timezones))
 # print(world_timezones[0:359])
 # print(type(world_timezones))

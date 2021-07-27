@@ -36,14 +36,14 @@ for t in world_timezones[0:359]:
     current_time = datetime.now(pytz.timezone(t)).strftime('%H:%M %p')
     
     if current_time in world_timezones[0:359] == '12:00 PM':
-        playsound('/mnt/c/Users/sgari/Documents/my_coding_projects/The_Complete_Python_Course/high_noon.mp3')
+        playsound('high_noon.mp3')
         # print("It\'s {t} high noon.")
         print(f"In {t} it\'s {current_time} high noon.")
        
            
     else:
         # print("It ain\'t my  time.")
-        playsound('/mnt/c/Users/sgari/Documents/my_coding_projects/The_Complete_Python_Course/high_noon.mp3')
+        playsound('My_Time.mp3')
         print(f"In {t} ain\'t {current_time} my time")
     
         

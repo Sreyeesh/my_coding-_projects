@@ -17,7 +17,10 @@ def add_to_movie_database():
             'year': year
         }
     )
- 
+# menu_selection = {
+#     "a": add_to_movie_database,
+# }
+
 #list movies
 def list_movies():
     user_search = input("What movie would you like to list ? ")
@@ -44,12 +47,12 @@ def find_movies():
              print(movie['title'])
 
 
-menu_selection = {
-    "a": add_to_movie_database,
-    "l": list_movies,
-    "f": find_movies(),
+# menu_selection = {
+#     "a": add_to_movie_database,
+#     "l": list_movies,
+#     "f": find_movies(),
     
-}
+# }
 find_movies()
 
 
@@ -62,12 +65,12 @@ def find_director():
              print(movie['director'])
 
 
-menu_selection = {
-    "a": add_to_movie_database,
-    "l": list_movies,
-    "f": find_movies(),
-    "fd": find_director()
-}
+# menu_selection = {
+#     "a": add_to_movie_database,
+#     "l": list_movies,
+#     "f": find_movies(),
+#     "fd": find_director()
+# }
   
 
 find_director()
@@ -80,12 +83,12 @@ def find_year_released():
              print(movie['year'])
 
 
-menu_selection = {
-    "a": add_to_movie_database,
-    "l": list_movies,
-    "f": find_movies(),
-    "fd": find_year_released()
-}
+# menu_selection = {
+#     "a": add_to_movie_database,
+#     "l": list_movies,
+#     "f": find_movies(),
+#     "fd": find_year_released()
+# }
   
 
 find_year_released()

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import maya.cmds as cmds
 
 keyframes = cmds.keyframe(attribute ='focusDistance', q=True)
@@ -30,3 +31,11 @@ def calculate_keyframes(): # work on this
         print('these are the new keyframes',calculate_keyframes)
 
 calculate_keyframes()    
+=======
+numbers = [101,102,103]
+
+for i in range(len(numbers)):
+    numbers[i] = numbers[i] - 51
+    
+print(numbers)
+>>>>>>> 76a9b6448382608ac61baa6d8d96a97738dcf3f9

@@ -21,28 +21,6 @@ def select_camera():
 
 select_camera()  
 
-#get the units of the maya scene 
- 
-# def currentunit():
-#     unit = CurrentUnit
-#     if unit  == CurrentUnit:
-#         print('not changing unit')
-  
-# currentunit()
-
-# # change units to meter if it's not meter
-# def changingunit():
-#      unit_changing = changeUnit
-#      unit = CurrentUnit
-#      if unit_changing != unit:
-#          print('changing unit to: ',unit_changing)
-#      if unit == currentunit:
-#         print('not changing unit')
-
-     
-
-changingunit()
-
 #get keyframes focus distance keys from camera in Maya
 
 def getkeyframes():
@@ -67,9 +45,16 @@ subtract_keyframes()
 
 #don't change  units if it's correct unit 
 def nochange():
-    unit = cmds.currentUnit( query = True, linear= True)
+    unit = CurrentUnit
     if unit == CurrentUnit:
-        print('not changing units already in meters')
+        unit =  CurrentUnit
+        print('this was the unit',unit)
+      
+    elif unit != changeUnit:
+        print('changing units to meters',unit)
+    else:
+        unit =  CurrentUnit
+        print('not changing unit',unit)      
 
 
 nochange()    

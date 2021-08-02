@@ -23,21 +23,22 @@ select_camera()
 
 #get the units of the maya scene 
  
-def currentunit():
-    unit = CurrentUnit
-    if unit  == CurrentUnit:
-        print('not changing unit')
+# def currentunit():
+#     unit = CurrentUnit
+#     if unit  == CurrentUnit:
+#         print('not changing unit')
   
-currentunit()
+# currentunit()
 
-# change units to meter if it's not meter
-def changingunit():
-     unit_changing = changeUnit
-     unit = CurrentUnit
-     if unit_changing != unit:
-         print('changing unit to: ',unit_changing)
-     else:
-         print(currentunit)    
+# # change units to meter if it's not meter
+# def changingunit():
+#      unit_changing = changeUnit
+#      unit = CurrentUnit
+#      if unit_changing != unit:
+#          print('changing unit to: ',unit_changing)
+#      if unit == currentunit:
+#         print('not changing unit')
+
      
 
 changingunit()

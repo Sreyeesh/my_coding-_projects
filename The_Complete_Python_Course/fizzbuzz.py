@@ -9,8 +9,12 @@ do multiples of 2 do multiples of 6  do multiples of 2 and 6
 """
 numbers = range(1,101)
 
-for number in numbers: 
-    if number % 3 == 0 or number % 5  == 0:
+for number in numbers:
+    if number % 3 == 0 and number % 5  == 0:
+        print('FizzBuzz')
+    elif number % 3 == 0:
+        print('Fizz')
+    elif number % 5 == 0:
+        print("Buzz")
+    else:
         print(number)
-
-        

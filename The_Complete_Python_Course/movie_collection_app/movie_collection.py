@@ -27,7 +27,7 @@ def list_movies():
  
     for movie in movies:
         if movie['title'] == user_search:
-            print(movie)
+            print_movie(movie)
 
 #print movies
 
@@ -36,7 +36,7 @@ def print_movie(movie):
     print(f"Director: {movie['director']}")
     print(f"Release year: {movie['year']}")
 
-
+print_movie(movie)
 
 #find movies
 def find_movies():

@@ -1,118 +1,108 @@
-# Incomplete app!
+from dataclasses import dataclass
  
-MENU_PROMPT = "\nEnter 'a' to add a movie, 'l' to see your movies, 'f',' to find a movie by title, 'fd' to find movie director ,'fyd' to find year released or 'q' to quit: "
+MENU_PROMPT = "\nEnter 'a' to add a movie, 'l' to see your movies, 'f',' to find a movie by title, 'fd' to find movie director ,'fyr' to find year released or 'q' to quit: "
 movies = []
  
+@dataclass
+class Movie:
+   movie_title: str
+   movie_director: str
+   release_year: str
  
-# You may want to create a function for this code
-def add_to_movie_database():
-    title = input("Enter the movie title: ")
-    director = input("Enter the movie director: ")
-    year = input("Enter the movie release year: ")
+   def __str__(self):
+       return """Title: {movie_title}
+        Director: {movie_director}
+        Release year: {release_year}""".format(movie_title=self.movie_title, movie_director=self.movie_director, release_year=self.release_year)
+
+
+# Prompts user to add a movie to the movies database.
+#
+# @param movie Adds movie to database.
+def add_to_movie_database(movie):
+   movies.append(movie)
  
-    movies.append(
-        {
-            'title': title,
-            'director': director,
-            'year': year
-        }
-    )
-# menu_selection = {
-#     "a": add_to_movie_database,
-# }
+# List movie by title 
+#
+# @param title The title to search for.
+# @return Movie if found. Else returns None
+def list_movie_by_title(movie_title: str):
+   for movie in movies:
+       if movie.movie_title == movie_title:
+           return movie
+   return None
 
-#list movies
-def list_movies():
-    user_search = input("What movie would you like to list ? ")
- 
-    for movie in movies:
-        if movie['title'] == user_search:
-            print_movie(movie)
+#find movie by title
+def find_movie_by_title(movie_title: str):
+       for movie in movies:
+        if movie.movie_title == movie_title:
+           return movie
+        return None
+# Searches for a movie by director.
+#
+# @param director The director to search for.
+# @return Movie if found. Else returns None.
+def find_movie_by_director(movie_director):
+   for movie in movies:
+       if movie.movie_director == movie_director:
+           return movie
+   return None
 
-#print movies
-
-def print_movie(movie):
-    print(f"Title: {movie['title']}")
-    print(f"Director: {movie['director']}")
-    print(f"Release year: {movie['year']}")
-
-print_movie(movie)
-
-#find movies
-def find_movies():
-     user_search = input("what movies would you like to find ? ")
-
-     for movie in movies: 
-         if movie['title'] == user_search:
-             print(movie['title'])
-
-
-# menu_selection = {
-#     "a": add_to_movie_database,
-#     "l": list_movies,
-#     "f": find_movies(),
-    
-# }
-find_movies()
-
-
-#find director 
-def find_director():
-     user_search = input("what movies would you like to find ? ")
-
-     for movie in movies: 
-         if movie['director'] == user_search:
-             print(movie['director'])
-
-
-# menu_selection = {
-#     "a": add_to_movie_database,
-#     "l": list_movies,
-#     "f": find_movies(),
-#     "fd": find_director()
-# }
-  
-
-find_director()
-
-def find_year_released():
-     user_search = input("what release date would you like to find ? ")
-
-     for movie in movies: 
-         if movie['year'] == user_search:
-             print(movie['year'])
-
-
-# menu_selection = {
-#     "a": add_to_movie_database,
-#     "l": list_movies,
-#     "f": find_movies(),
-#     "fd": find_year_released()
-# }
-  
-
-find_year_released()
-
-
-
-# And another function here for the user menu
+# @param year The year to search for.
+# @return Movie if found. Else returns None.
+def find_movie_by_year(release_year):
+   for movie in movies:
+       if movie.release_year == release_year:
+           return movie
+   return None
 
 def menu_selection():
     selection = input(MENU_PROMPT)
     while selection != 'q':
-        if selection == "a":
-            add_to_movie_database()
-        elif selection == "l":
-            list_movies()
-        elif selection == "f":
-            find_movies()
-        elif selection == "fd":
-            find_director()
-        elif selection == "fyr":
-            find_year_released()
-        else:
-            print('Unknown command. Please try again.')
-        selection = input(MENU_PROMPT)
- 
- 
+       if selection == "a":
+           movie_title = input("Enter the movie title: ")
+           movie_director = input("Enter the movie director: ")
+           release_year = input("Enter the movie release year: ")
+           add_to_movie_database(Movie(movie_title, movie_director, release_year))
+           print("Added movie with title {}!".format(movie_title))
+       
+       elif selection == "l":
+            for movie in movie_title:
+                print('these are movies added',movie_title)
+                movie = list_movie_by_title(movie_title)
+                if (movie is not None):
+                    print(movie)
+                else:
+                 print("Movie with title \"{}\" not found!".format(movie_title))
+       
+       elif selection =="f":
+            movie_title = input("find movie title:")
+            for movie in movie_title:
+                print(movie)
+                movie = find_movie_by_title(movie_title)
+                if(movie is not None):
+                    print(movie)
+                else:
+                    print("Movie with title \"{}\" not found!".format(movie_title))
+       
+       elif selection == "fd":
+           movie_director = input("Search movie by director:")
+           movie = find_movie_by_director(movie_director)
+           print(movie)
+           if (movie is not None):
+               print(movie)
+           else:
+               print("Movie with director \"{}\" not found!".format(movie_director))
+
+       elif selection == "fyr":
+           release_year = input("Search movie by year:")
+           movie = find_movie_by_year(release_year)
+           print(movie)
+           if (movie is not None):
+               print(movie)
+           else:
+               print("Movie with selection \"{}\" not found!".format(selection))
+       else:
+           print('Unknown command. Please try again.')
+       selection = input(MENU_PROMPT)
+
 menu_selection()

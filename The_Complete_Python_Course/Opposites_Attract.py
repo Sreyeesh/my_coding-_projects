@@ -25,4 +25,3 @@ def lovefunc(flower1,flower2):
                 
     
 print(lovefunc(flower1,flower2))     
-

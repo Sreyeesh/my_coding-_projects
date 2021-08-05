@@ -80,6 +80,7 @@ menu_selection = {
 def menu():
     # walrus operator - DRY
 
+
     
     while (user_selection := input(MENU_PROMPT)) != 'q':
         for selection in menu_selection:
@@ -88,3 +89,5 @@ def menu():
 
 
 menu()
+
+

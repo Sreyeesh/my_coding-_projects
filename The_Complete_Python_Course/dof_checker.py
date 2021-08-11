@@ -2,6 +2,7 @@ import maya.cmds as cmds
 
 keyframes = cmds.keyframe(attribute ='focusDistance', q=True)
 
+
 new_keyframes = []
 keyframe_value = 51
 
@@ -11,15 +12,17 @@ changeUnit = cmds.currentUnit(linear ='m')
 
 list_cameras = cmds.listCameras()
 
+
+
 #select camera
 
 def select_camera():
     CameraSelect =  list_cameras
-    for cam in CameraSelect:
-        print('this is the camera',CameraSelect[0])
-        break
+    return('this is the camera',CameraSelect[0])
+    
+   
 
-select_camera()  
+print(select_camera())
 
 #get keyframes focus distance keys from camera in Maya
 
@@ -28,6 +31,8 @@ def getkeyframes():
     get_keyframes = keyframes
     for key in get_keyframes:
         new_keyframes.append(key)
+        if key == None: 
+            print('not running because no focus distance keys are keyd')
     print(' these are the keyframes of the maya camera: ',new_keyframes)
 
 getkeyframes()    
@@ -41,21 +46,27 @@ def subtract_keyframes():
     print('these are the game engine key frames',game_engine_keys)
 
 subtract_keyframes()    
+#change unit to meters
+def change_unit():
+    oldUnit = CurrentUnit
+    if oldUnit !=  cmds.currentUnit(linear = 'm'):
+        print('trying to chang into correct unit ....')
+    print(oldUnit)
+  
 
+change_unit()        
 
 #don't change  units if it's correct unit 
 def nochange():
-    unit = CurrentUnit
+    unit = cmds.currentUnit(query = True, linear = True)
     if unit == CurrentUnit:
-        unit =  CurrentUnit
-        print('this was the unit',unit)
-      
-    elif unit != changeUnit:
-        print('changing units to meters',unit)
-    else:
-        unit =  CurrentUnit
-        print('not changing unit',unit)      
+        print('not changing unit because it is in the correct unit meters',unit) 
+    
 
 
-nochange()    
+nochange()
+
+def camera_attribute():
+    key = []
+    for key in
 

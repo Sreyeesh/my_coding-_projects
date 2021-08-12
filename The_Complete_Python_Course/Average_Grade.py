@@ -5,28 +5,32 @@ my_student =  {
 }
 
 def student_name():
-    return(my_student['name'])
+    return my_student['name']
 
 print('this is the student name',student_name())
 
 def student_grade():
-    return(my_student['grades'])
-
+    return my_student['grades']
 print('these are the student grades',student_grade())
 
 #get the average of the student grade printed with name, list , and average grade. 
 
-def average_grade(student):
-    sum = 0
+# def average_student_grade(student):
+#     total = 0
 
-    for g in student:
-        sum = sum + g
-        # print(sum)
+#     for grade in student:
+#         total =  total + grade
+#         avg_wizard =  total / len(student)
+#         print(avg_wizard)
 
-        avg_wizard = sum /len(student)
-        return avg_wizard
-    
+# average_student_grade(my_student)
 
-print('This is the average of the wizarding student',average_grade(my_student['grades']))
+
+
+
+
+
+
+
    
 

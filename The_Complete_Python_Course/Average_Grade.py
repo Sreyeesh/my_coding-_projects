@@ -1,27 +1,29 @@
 my_student =  {
     'name': 'Harry Potter',
-    'grades': [70,88,90,99]
-    
+    'grades': [70, 88, 90, 99]
 }
+
+# don't really need a function for this, I would just use the built in dictionary 'get'
+# my_student.get("name") or what you have below, the wrapper is just extra steps and only good
+# for the one variable.
 
 def student_name():
     return my_student['name']
 
 print('this is the student name',student_name())
 
-def student_grade():
-    return my_student['grades']
+#get the average of the student grade printed with name, list , and average grade.
 
-print('these are the student grades',student_grade())
+def getAverageGrade(grades):
+    """Return the average grades
 
-#get the average of the student grade printed with name and average grade. 
+    args:
+        grades ([int])
 
-def average_grade(student):
-    total = 0
+    returns:
+        float
+    """
 
-    for grade in student():
-        total = total + grade
-        avg_wizard = total/ len(student)
+    return sum(grades) / len(grades)
 
-print(average_grade(my_stud))
-
+print("Average grade: {}".format(getAverageGrade(my_student.get('grades'))))

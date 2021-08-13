@@ -1,6 +1,7 @@
 my_student =  {
     'name': 'Harry Potter',
-    'grades': [70, 88, 90, 99]
+    'grades': [70, 88, 90, 99],
+    #'average':#something here
 }
 
 # don't really need a function for this, I would just use the built in dictionary 'get'

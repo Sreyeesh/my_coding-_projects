@@ -17,10 +17,8 @@ print('this is the student name',student_name())
 
 def getAverageGrade(grades):
     """Return the average grades
-
     args:
         grades ([int])
-
     returns:
         float
     """

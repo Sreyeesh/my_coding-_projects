@@ -1,38 +1,35 @@
 import maya.cmds as cmds
 
-keyframes = cmds.keyframe(attribute ='focusDistance', q=True)
+# keyframes = cmds.keyframe(attribute ='focusDistance', q=True)
 
 
 new_keyframes = []
 keyframe_value = 51
 
-CurrentUnit = cmds.currentUnit( query = True, linear= True)
+# CurrentUnit = cmds.currentUnit(fullName=True, query = True, linear= True)
 
-changeUnit = cmds.currentUnit(linear ='m')
+# changeUnit = cmds.currentUnit(fullName=True,linear ='meter')
 
-list_cameras = cmds.listCameras()
+# list_cameras = cmds.listCameras()
 
 
 
 #select camera
 
 def select_camera():
-    CameraSelect =  list_cameras
-    return('this is the camera',CameraSelect[0])
+    list_cameras = cmds.listCameras()
+    return list_cameras[0]
     
-   
-
 print(select_camera())
 
 #get keyframes focus distance keys from camera in Maya
 
 def getkeyframes():
-
+    keyframes = cmds.keyframe(attribute ='focusDistance', q=True)
     get_keyframes = keyframes
+   
     for key in get_keyframes:
         new_keyframes.append(key)
-        if key == None: 
-            print('not running because no focus distance keys are keyd')
     print(' these are the keyframes of the maya camera: ',new_keyframes)
 
 getkeyframes()    
@@ -45,28 +42,24 @@ def subtract_keyframes():
     game_engine_keys =  [key - 51 for key in cmds.keyframe(attribute ='focusDistance', q=True) if key > 50 ]
     print('these are the game engine key frames',game_engine_keys)
 
-subtract_keyframes()    
+subtract_keyframes() 
+
+
 #change unit to meters
-def change_unit():
-    oldUnit = CurrentUnit
-    if oldUnit !=  cmds.currentUnit(linear = 'm'):
-        print('trying to chang into correct unit ....')
-    print(oldUnit)
-  
 
-change_unit()        
+def get_current_unit():
+    currentUnit = cmds.currentUnit(fullName=True, query = True, linear= True)
+    return currentUnit
+   
 
-#don't change  units if it's correct unit 
-def nochange():
-    unit = cmds.currentUnit(query = True, linear = True)
-    if unit == CurrentUnit:
-        print('not changing unit because it is in the correct unit meters',unit) 
+print('this is the current unit',get_current_unit())
+
+
+
+def change_current_unit():
+    changeUnit =cmds.currentUnit( linear='meter' )
+    return changeUnit
     
+print('changed unit to meters',change_current_unit())
 
-
-nochange()
-
-def camera_attribute():
-    key = []
-    for key in
 

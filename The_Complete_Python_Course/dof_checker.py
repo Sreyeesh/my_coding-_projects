@@ -12,15 +12,14 @@ keyframe_value = 51
 
 # list_cameras = cmds.listCameras()
 
+#value = cmds.getAttr("myCameraShape.attrName")
 
-
-#select camera
-
-def select_camera():
+#list camera
+def list_camera():
     list_cameras = cmds.listCameras()
     return list_cameras[0]
     
-print(select_camera())
+print(list_camera())
 
 #get keyframes focus distance keys from camera in Maya
 
@@ -30,7 +29,7 @@ def getkeyframes():
    
     for key in get_keyframes:
         new_keyframes.append(key)
-    print(' these are the keyframes of the maya camera: ',new_keyframes)
+    print(' these are the keyfra1mes of the maya camera: ',new_keyframes)
 
 getkeyframes()    
  
@@ -45,21 +44,43 @@ def subtract_keyframes():
 subtract_keyframes() 
 
 
-#change unit to meters
+#get current unit
 
 def get_current_unit():
     currentUnit = cmds.currentUnit(fullName=True, query = True, linear= True)
     return currentUnit
-   
 
 print('this is the current unit',get_current_unit())
 
+#change unit to meters if not meters
+
+def change_to_meters():
+    newUnit = cmds.currentUnit( linear='m' )
+    return newUnit
+
+print('this is the new unit',change_to_meters())
 
 
-def change_current_unit():
-    changeUnit =cmds.currentUnit( linear='meter' )
-    return changeUnit
-    
-print('changed unit to meters',change_current_unit())
+
+#not changing unit
+
+def nounitdisplay():
+   unit = cmds.currentUnit( linear='m' )
+   currentUnit =  cmds.currentUnit( linear='m' )
+   while unit:
+       if unit ==  currentUnit:
+           print('not changing unit')
+           break           
+nounitdisplay()        
+
+
+
+
+
+
+
+
+
+
 
 

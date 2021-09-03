@@ -15,8 +15,9 @@ class Student:
 student_one = Student('Rolf Smith', [70, 88, 90, 99])
 student_two = Student('Sreyeesh', [50, 60, 99, 100])
 
-print(student_one.name)
-print(student_two.name)
+print(student_one.name,student_one.grades)
+print(student_two.name,student_two.grades)
+
 
 
 

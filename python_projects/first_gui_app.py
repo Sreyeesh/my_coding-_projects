@@ -1,0 +1,33 @@
+"""
+Project: Welcome App
+
+"""
+import PyQt5.QtWidgets as qtw
+import PyQt5.QtGui as qtg
+
+class hogwartsExpress(qtw.QWidget):
+    def __init__(self) -> None:
+        super().__init__()
+
+        #Add Title
+        self.setWindowTitle("Hogwarts Students Registery")
+
+        # Set Vertical Layout
+        self.setLayout(qtw.QVBoxLayout())
+
+        # Create A Lable
+        my_label = qtw.QLabel("Welcome to Hogwarts")
+        self.layout().addWidget(my_label)
+
+        #Change the font size of label
+        my_label.setFont(qtg.QFont('',18))
+        self.layout().addWidget(my_label)
+
+
+        self.show()
+
+app = qtw.QApplication([])
+mw = hogwartsExpress()
+
+app.exec_()
+

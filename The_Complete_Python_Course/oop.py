@@ -15,14 +15,14 @@ class Student:
 student_one = Student('Rolf Smith', [70, 88, 90, 99])
 student_two = Student('Sreyeesh', [50, 60, 99, 100])
 
-print(student_one.name,student_one.grades)
-print(student_two.name,student_two.grades)
+# print(student_one.name,student_one.grades)
+# print(student_two.name,student_two.grades)
 
 
+print(student_one.average())
+print(student_two.average())
 
-
-
-
+#in methods first parameter is called self 
 
 
 

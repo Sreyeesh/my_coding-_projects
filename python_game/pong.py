@@ -1,5 +1,5 @@
 """
-project: pong game tutorial from freecodecamp
+project: pong game 
 will also make this into a multiplayer game as well 
 
 date:  08/25/2021

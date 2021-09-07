@@ -13,7 +13,7 @@ def student_name():
 print('this is the student name',student_name())
 
 #get the average of the student grade printed with name, list , and average grade.
-
+#test
 def getAverageGrade(grades):
     """Return the average grades
 

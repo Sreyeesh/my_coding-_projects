@@ -26,6 +26,8 @@ class hogwartsExpress(qtw.QWidget):
         self.layout().addWidget(my_label)
         my_label.setAlignment(QtCore.Qt.AlignCenter)
 
+        #background image 
+        
 
         self.show()
 

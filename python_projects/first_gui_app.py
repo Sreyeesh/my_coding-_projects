@@ -20,7 +20,7 @@ class hogwartsExpress(qtw.QWidget):
         self.layout().addWidget(my_label)
 
         #Change the font size of label
-        my_label.setFont(qtg.QFont('',18))
+        my_label.setFont(qtg.QFont('Harry P',150))
         self.layout().addWidget(my_label)
 
 

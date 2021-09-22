@@ -40,9 +40,10 @@ class hogwartsExpress(qtw.QWidget):
 
         #Show the app
         self.show()
+        
         def press_it():
             #Add student name to label
-            my_label.setText(f'Hello {my_entry.text()}!')
+            my_label.setText(f'Hello {my_entry.text()} !')
             #Clear the entry box 
             my_entry.setText("")
         

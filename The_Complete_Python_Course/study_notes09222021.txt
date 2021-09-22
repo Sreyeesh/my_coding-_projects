@@ -1,0 +1,17 @@
+honestly, break down codewars prompts so you understand what you have to do. that's the biggest gap I see so far
+but also
+go back and re-study loops and functions
+what makes me say this is
+from what you wrote above, it means you don't have a good grasp of where/when to use loops yet
+
+loops are for iterators: lists, strings, etc
+it wouldn't work on a variable that's just a single number
+I mean techincally it would
+but it would just print 1 number
+so these are the kind of things I'm trying to highlight, which are important to understand
+
+so these are the kind of things I'm trying to highlight, which are important to understand
+if you have x_count =[0,1,2,3,4,5]
+you can iterate through that with a for loop
+or 'abcdef'
+you can run through that too

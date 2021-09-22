@@ -1,12 +1,18 @@
 import maya.cmds as cmds
 
-
+# keyframes = cmds.keyframe(attribute ='focusDistance', q=True)
 
 
 new_keyframes = []
 keyframe_value = 51
 
+# CurrentUnit = cmds.currentUnit(fullName=True, query = True, linear= True)
 
+# changeUnit = cmds.currentUnit(fullName=True,linear ='meter')
+
+# list_cameras = cmds.listCameras()
+
+#value = cmds.getAttr("myCameraShape.attrName")
 
 #list camera
 def list_camera():
@@ -15,40 +21,27 @@ def list_camera():
     
 print(list_camera())
 
-#get attributes
-
-def attributesofcam():
-    pass
+#get keyframes focus distance keys from camera in Maya
 
 def getkeyframes():
-    keyframes = cmds.keyframe(selected=False, q=True)
+    keyframes = cmds.keyframe(attribute ='focusDistance', q=True)
+    get_keyframes = keyframes
    
-    if keyframes:
-        for key in keyframes:
-            new_keyframes.append(key)
-        print('these are the keyfra1mes of the maya camera: ', new_keyframes)
-        
-    print('no keyframes are keyed on the camera')
+    for key in get_keyframes:
+        new_keyframes.append(key)
+    print(' these are the keyfra1mes of the maya camera: ',new_keyframes)
 
-getkeyframes()
+getkeyframes()    
  
 
-#subtracting maya focus distance from Maya to Game Engine
+#subtracting maya focus distance from Maya to Game Engine 
 
 def subtract_keyframes():
-    # attributes = ['focusDistance', '...']
 
-    # game_engine_keys =  [key - keyframe_value for key in cmds.keyframe(attribute ='focusDistance', q=True) if key > 50]
+    game_engine_keys =  [key - 51 for key in cmds.keyframe(attribute ='focusDistance', q=True) if key > 50 ]
+    print('these are the game engine key frames',game_engine_keys)
 
-    game_engine_keys = []
-    keys = cmds.keyframe(selected=False, q=True)
-    if keys:
-        for key in keys:
-            game_engine_keys.append(key - keyframe_value)
-            print('these are the game engine key frames', game_engine_keys)
-
-
-subtract_keyframes()
+subtract_keyframes() 
 
 
 #get current unit
@@ -77,10 +70,9 @@ def nounitdisplay():
    while unit:
        if unit ==  currentUnit:
            print('not changing unit')
-           break
-                   
-nounitdisplay()
-
+           break 
+                 
+nounitdisplay()        
 
 
 

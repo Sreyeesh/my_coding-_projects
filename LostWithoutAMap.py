@@ -7,6 +7,15 @@ For example:
 
 """
 
+"""
+Given an array of integers, return a new array with each value doubled.
+
+For example:
+
+[1, 2, 3] --> [2, 4, 6]
+
+"""
+
 list_of_numbers = [1,2,3]
 
 def maps(a):
@@ -18,6 +27,4 @@ def maps(a):
 
     return new_list_of_numbers
     
-print(maps(list_of_numbers))    
-
-
+print(maps(list_of_numbers))  

@@ -1,8 +1,8 @@
 
     
-the_force = input('Do you believe you in the force ? (yes/no): ')
+# the_force = input('Do you believe you in the force ? (yes/no): ')
 
-print('May the force  be with you !')
+# print('May the force  be with you !')
 
 while the_force:
 
@@ -11,8 +11,9 @@ while the_force:
     if the_force == "yes": 
         print("The force will guide you !")
     else:
-        print('If Once You Start Down The Dark Path, Forever Will it Dominate Your Desitny!')
+        print('you are the darkside !')
         break
+
 
 order_66 = input('Would you like to initiate Order 66, if you believe in the darkside of the force ?(yes/no)')
     

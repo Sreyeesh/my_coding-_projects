@@ -13,5 +13,4 @@ word_challenge = "world"
 def solution(string):
     return(string[::-1])
     
-
 print(solution(word_challenge))

@@ -19,12 +19,14 @@ For example:
 list_of_numbers = [1,2,3]
 
 def maps(a):
-    new_list_of_numbers =  []
-
-    for i in range(len(a)):
-        a[i] *= 2
-        new_list_of_numbers += [a[i]]
-
-    return new_list_of_numbers
     
-print(maps(list_of_numbers))  
+# def maps(a):
+#     new_list_of_numbers =  []
+
+#     for i in range(len(a)):
+#         a[i] *= 2
+#         new_list_of_numbers += [a[i]]
+
+#     return new_list_of_numbers
+    
+# print(maps(list_of_numbers))  
